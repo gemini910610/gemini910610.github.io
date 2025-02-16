@@ -15,53 +15,54 @@ https://gist.github.com/javifm86/073d8e05942a8849dd11fa6996955fc0
 */
 
 .activity_bar {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+
     background-color: #181818;
     /*activityBar.background*/
     border-right: 1px solid #2B2B2B;
     /*activityBar.border*/
-    display: flex;
-    flex-direction: column;
-    user-select: none;
 }
 
-.activity_bar img {
+.activity_bar>.icon24 {
     padding: 12px;
-    width: 24px;
-    height: 24px;
     filter: brightness(0.65);
     cursor: pointer;
 }
 
-.activity_bar img:hover {
+.activity_bar>.icon24:hover {
     filter: brightness(1);
 }
 
-.activity_bar .active {
+.activity_bar>.active {
     filter: brightness(1);
+
     box-shadow: inset 2px 0 0 0 #0078D4;
     /*activityBar.activeBorder*/
 }
 
 .primary_sidebar {
+    width: 170px;
+    font-size: 15px;
+    user-select: none;
+
     background-color: #181818;
     /*sideBar.background*/
     border-right: 1px solid #2B2B2B;
     /*sideBar.border*/
     color: #CCCCCC;
     /*sideBar.foreground*/
-    font-size: 15px;
-    width: 170px;
-    user-select: none;
 }
 
 .primary_sidebar>div:not(.header) {
-    padding: 2px 34px;
-    cursor: pointer;
     display: flex;
     align-items: center;
+    padding: 2px 34px;
+    cursor: pointer;
 }
 
-.primary_sidebar>div:not(.header)>img {
+.primary_sidebar>div:not(.header)>.icon16 {
     margin-right: 7px;
 }
 
@@ -70,73 +71,69 @@ https://gist.github.com/javifm86/073d8e05942a8849dd11fa6996955fc0
     /*list.hoverBackground*/
 }
 
-.primary_sidebar .header {
-    padding: 8px 12px;
+.primary_sidebar>.header {
     display: flex;
     align-items: center;
+    padding: 8px 12px;
 }
 
-.primary_sidebar .header img {
-    cursor: pointer;
-    width: 16px;
-    height: 16px;
+.primary_sidebar>.header>.icon16 {
     padding: 2.5px;
     border-radius: 25%;
+    cursor: pointer;
 }
 
-.primary_sidebar .header img:hover {
+.primary_sidebar>.header>.icon16:hover {
     background-color: #5A5D5E50;
     /*toolbar.hoverBackground*/
 }
 
-.primary_sidebar .active {
+.primary_sidebar>.active {
     background-color: #37373D;
     /*list.inactiveSelectionBackground*/
 }
 
 .editor {
-    color: #CCCCCC;
-    /*editor.foreground*/
-    flex: 1;
     display: flex;
     flex-direction: column;
+    flex: 1;
+
+    color: #CCCCCC;
+    /*editor.foreground*/
     background-color: #181818;
     /*debugToolBar.background*/
 }
 
 .tab {
+    display: flex;
+    align-items: center;
     width: fit-content;
     padding: 10px 33px 10px 10px;
+    counter-increment: line-number;
+    user-select: none;
+
     border-top: 2px solid #0078D4;
     /*tab.activeBorderTop*/
     border-right: 1.5px solid #2B2B2B;
     /*tab.border*/
-    counter-increment: line-number;
     background-color: #1F1F1F;
     /*editor.background*/
-    display: flex;
-    align-items: center;
-    user-select: none;
 }
 
-.tab img {
-    width: 16px;
-    height: 16px;
+.tab>.icon16 {
     margin-right: 7px;
 }
 
 .code {
-    background-color: #1F1F1F;
-    /*editor.background*/
     flex: 1;
+    padding: 1px 0;
     font-size: 20px;
     font-family: Consolas;
-}
-
-.code {
-    padding: 1px 0;
     list-style: none;
     counter-reset: line-number 0;
+
+    background-color: #1F1F1F;
+    /*editor.background*/
 }
 
 .code>li {
@@ -145,13 +142,14 @@ https://gist.github.com/javifm86/073d8e05942a8849dd11fa6996955fc0
 
 .code>li::before {
     content: counter(line-number);
-    color: #6E7681;
-    /*editorLineNumber.foreground*/
     display: inline-block;
     width: 40px;
-    text-align: right;
     padding: 0 22.5px;
+    text-align: right;
     user-select: none;
+
+    color: #6E7681;
+    /*editorLineNumber.foreground*/
 }
 
 .code>li:hover::before {

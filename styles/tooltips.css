@@ -1,0 +1,85 @@
+.tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.tooltip::before {
+    content: attr(tooltip, '\00a0');
+    visibility: hidden;
+    padding: 2.5px 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+
+    background-color: #252526;
+    /*editorHoverWidget.background*/
+    color: #CCCCCC;
+    /*editorHoverWidget.foreground*/
+    border: 1px solid #454545;
+    /*editorHoverWidget.border*/
+    position: absolute;
+}
+
+.tip-left::before {
+    right: calc(100% + 5px);
+}
+
+.tip-right::before {
+    left: calc(100% + 5px);
+}
+
+.tip-top::before {
+    bottom: calc(100% + 5px);
+}
+
+.tip-bottom::before {
+    top: calc(100% + 5px);
+}
+
+.tooltip::after {
+    content: '';
+    visibility: hidden;
+    position: absolute;
+    border: 5px solid transparent;
+}
+
+.tip-left::after {
+    left: calc(-5px - 1px);
+
+    border-left-color: #252526;
+    /*editorHoverWidget.background*/
+    filter: drop-shadow(1px 0 #454545);
+    /*editorHoverWidget.border*/
+}
+
+.tip-right::after {
+    right: calc(-5px - 1px - 1px);
+
+    border-right-color: #252526;
+    /*editorHoverWidget.background*/
+    filter: drop-shadow(-1px 0 #454545);
+    /*editorHoverWidget.border*/
+}
+
+.tip-top::after {
+    top: calc(-5px - 1px);
+
+    border-top-color: #252526;
+    /*editorHoverWidget.background*/
+    filter: drop-shadow(0 1px #454545);
+    /*editorHoverWidget.border*/
+}
+
+.tip-bottom::after {
+    bottom: calc(-5px - 1px - 1px);
+
+    border-bottom-color: #252526;
+    /*editorHoverWidget.background*/
+    filter: drop-shadow(0 -1px #454545);
+    /*editorHoverWidget.border*/
+}
+
+.tooltip:hover::before, .tooltip:hover::after {
+    visibility: visible;
+}

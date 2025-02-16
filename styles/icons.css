@@ -1,0 +1,53 @@
+.icon24 {
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+}
+
+.icon16 {
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+}
+
+/* https: //github.com/microsoft/vscode-icons */
+
+.files {
+    background-image: url("https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/files.svg");
+}
+
+.extensions {
+    background-image: url("https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/extensions.svg");
+}
+
+.github-inverted {
+    background-image: url("https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/github-inverted.svg");
+}
+
+.remote-explorer {
+    background-image: url("https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/remote-explorer.svg");
+}
+
+.json {
+    background-image: url("https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/json.svg");
+}
+
+.account {
+    background-image: url("https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/account.svg");
+}
+
+.settings-gear {
+    background-image: url("https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/settings-gear.svg");
+}
+
+.refresh {
+    background-image: url("https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/refresh.svg");
+}
+
+.symbol-file {
+    background-image: url("https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/symbol-file.svg");
+}

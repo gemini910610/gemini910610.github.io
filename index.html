@@ -4,43 +4,25 @@
         <meta charset="UTF-8">
         <title>Gemini</title>
         <link rel="stylesheet" href="styles/style.css">
-        <script defer="true" src="scripts/script.js"></script>
+        <link rel="stylesheet" href="styles/icons.css">
+        <link rel="stylesheet" href="styles/tooltips.css">
+        <script type="module" src="scripts/script.js"></script>
     </head>
     <body>
-        <!--https://github.com/microsoft/vscode-icons-->
-        <div class="activity_bar">
-            <img draggable="false" class="active" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/files.svg">
-            <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/extensions.svg">
-            <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/github-inverted.svg">
-            <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/remote-explorer.svg">
-            <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/json.svg">
-            <div class="placeholder"></div>
-            <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/account.svg">
-            <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/settings-gear.svg">
-        </div>
+        <div class="activity_bar"></div>
         <div class="primary_sidebar">
             <div class="header">
                 <span>header</span>
                 <div class="placeholder"></div>
-                <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/refresh.svg">
-            </div>
-            <div class="active">
-                <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/symbol-file.svg">
-                <span>index.html</span>
-            </div>
-            <div>
-                <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/symbol-file.svg">
-                <span>style.css</span>
+                <div class="tooltip tip-bottom icon16 refresh" tooltip="refresh"></div>
             </div>
         </div>
         <div class="editor">
             <div class="tab">
-                <img draggable="false" src="https://raw.githubusercontent.com/microsoft/vscode-icons/master/icons/dark/symbol-file.svg">
+                <div class="icon16 symbol-file"></div>
                 <span>index.html</span>
             </div>
-            <ol class="code">
-                <li>content</li>
-            </ol>
+            <ol class="code"></ol>
         </div>
     </body>
 </html>
