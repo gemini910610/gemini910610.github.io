@@ -10,24 +10,16 @@
             import * as View from './scripts/view.js';
 
             View.create_activity_bar('files');
-            View.create_primary_sidebar('index.html');
+            View.create_sidebar_header('Files');
+            View.create_file_sidebar('index.html');
+            View.create_tab('index.html');
             View.create_editor_code();
         </script>
     </head>
     <body>
         <div class="activity_bar"></div>
-        <div class="primary_sidebar">
-            <div class="header">
-                <span>header</span>
-                <div class="placeholder"></div>
-                <div class="tooltip tip-bottom icon16 refresh" tooltip="refresh"></div>
-            </div>
-        </div>
+        <div class="primary_sidebar"></div>
         <div class="editor">
-            <div class="tab">
-                <div class="icon16 symbol-file"></div>
-                <span>index.html</span>
-            </div>
             <ol class="code"></ol>
         </div>
     </body>

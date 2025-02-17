@@ -6,11 +6,11 @@
 }
 
 .tooltip::before {
-    content: attr(tooltip, '\00a0');
+    content: attr(tooltip, '\a0');
     visibility: hidden;
     padding: 2.5px 5px;
     border-radius: 5px;
-    white-space: nowrap;
+    white-space: pre;
 
     background-color: #252526;
     /*editorHoverWidget.background*/
@@ -78,6 +78,10 @@
     /*editorHoverWidget.background*/
     filter: drop-shadow(0 -1px #454545);
     /*editorHoverWidget.border*/
+}
+
+.tooltip:hover {
+    z-index: 1;
 }
 
 .tooltip:hover::before, .tooltip:hover::after {

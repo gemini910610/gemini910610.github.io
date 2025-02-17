@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gemini</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
+    <script type="module">
+        import * as View from './scripts/view.js';
+
+        View.create_activity_bar('extensions');
+        View.create_sidebar_header('Extension');
+        View.create_extension_sidebar('Python Debugger');
+        View.create_tab('Python Debugger');
+    </script>
+</head>
+<body>
+    <div class="activity_bar"></div>
+    <div class="primary_sidebar"></div>
+    <div class="editor">
+        <div class="extension-content"></div>
+    </div>
+</body>
+</html>

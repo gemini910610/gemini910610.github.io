@@ -55,42 +55,92 @@ https://gist.github.com/javifm86/073d8e05942a8849dd11fa6996955fc0
     /*sideBar.foreground*/
 }
 
-.primary_sidebar>div:not(.header) {
+.file {
     display: flex;
     align-items: center;
     padding: 2px 34px;
     cursor: pointer;
 }
 
-.primary_sidebar>div:not(.header)>.icon16 {
+.extension {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 10px 12.5px 10px 15px;
+    cursor: pointer;
+}
+
+.description {
+    margin: 5px 0;
+    font-size: 12.5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #9D9D9D;
+    /*descriptionForeground*/
+}
+
+.date {
+    flex: 1;
+    font-size: 12px;
+    font-family: Consolas;
+
+    color: #9D9D9D;
+    /*descriptionForeground*/
+}
+
+.file>.icon16 {
     margin-right: 7px;
 }
 
-.primary_sidebar>div:not(.header, .active):hover {
+.file:not(.active):hover {
     background-color: #2A2D2E;
     /*list.hoverBackground*/
 }
 
-.primary_sidebar>.header {
+.extension:not(.active):hover {
+    background-color: #2A2D2E;
+    /*list.hoverBackground*/
+}
+
+.header {
     display: flex;
     align-items: center;
     padding: 8px 12px;
 }
 
-.primary_sidebar>.header>.icon16 {
+.header>.icon16,
+.footer>.icon16 {
     padding: 2.5px;
     border-radius: 25%;
     cursor: pointer;
 }
 
-.primary_sidebar>.header>.icon16:hover {
+.header>.icon16:hover,
+.footer>.icon16:hover {
     background-color: #5A5D5E50;
     /*toolbar.hoverBackground*/
 }
 
-.primary_sidebar>.active {
+.file.active {
     background-color: #37373D;
     /*list.inactiveSelectionBackground*/
+}
+
+.extension.active {
+    background-color: #37373D;
+    /*list.inactiveSelectionBackground*/
+}
+
+.extension.active .description,
+.extension.active .date {
+    color: #CCCCCC;
+    /*sideBar.foreground*/
+}
+
+.footer {
+    display: flex;
+    align-items: center;
 }
 
 .editor {
@@ -126,11 +176,17 @@ https://gist.github.com/javifm86/073d8e05942a8849dd11fa6996955fc0
 
 .code {
     flex: 1;
-    padding: 1px 0;
     font-size: 20px;
     font-family: Consolas;
     list-style: none;
     counter-reset: line-number 0;
+
+    background-color: #1F1F1F;
+    /*editor.background*/
+}
+
+.extension-content {
+    flex: 1;
 
     background-color: #1F1F1F;
     /*editor.background*/

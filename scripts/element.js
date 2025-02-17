@@ -1,9 +1,16 @@
 export class Element
 {
-    static create(tag, parent)
+    static create(tag, parent, insert = false)
     {
         const element = document.createElement(tag);
-        parent.appendChild(element);
+        if (insert)
+        {
+            parent.prepend(element);
+        }
+        else
+        {
+            parent.appendChild(element);
+        }
         return element;
     }
 
