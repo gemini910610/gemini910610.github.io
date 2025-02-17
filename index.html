@@ -6,7 +6,13 @@
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/icons.css">
         <link rel="stylesheet" href="styles/tooltips.css">
-        <script type="module" src="scripts/script.js"></script>
+        <script type="module">
+            import * as View from './scripts/view.js';
+
+            View.create_activity_bar('files');
+            View.create_primary_sidebar('index.html');
+            View.create_editor_code();
+        </script>
     </head>
     <body>
         <div class="activity_bar"></div>
