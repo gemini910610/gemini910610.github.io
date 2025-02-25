@@ -2,10 +2,11 @@ import { Element } from './element.js';
 
 export class ActivityButton
 {
-    constructor(icon, tooltip, active = false)
+    constructor(icon, tooltip, callback, active = false)
     {
         this.icon = icon;
         this.tooltip = tooltip;
+        this.callback = callback;
         this.active = active;
     }
     generate(parent)
@@ -17,6 +18,8 @@ export class ActivityButton
             div.classList.add('active');
         }
         div.setAttribute('tooltip', this.tooltip);
+
+        div.addEventListener('click', this.callback);
     }
 }
 
@@ -31,9 +34,10 @@ export class Placeholder
 
 export class File
 {
-    constructor(filename, active = false)
+    constructor(filename, callback, active = false)
     {
         this.filename = filename;
+        this.callback = callback;
         this.active = active;
     }
     generate(parent)
@@ -43,6 +47,7 @@ export class File
         if (this.active)
         {
             div.classList.add('active');
+            this.callback();
         }
 
         const icon = Element.create('div', div);
@@ -50,6 +55,8 @@ export class File
 
         const span = Element.create('span', div);
         span.textContent = this.filename;
+
+        div.addEventListener('click', this.callback);
     }
 }
 
@@ -62,17 +69,18 @@ export class Line
     generate(parent)
     {
         const li = Element.create('li', parent);
-        li.textContent = this.content;
+        li.innerHTML = this.content;
     }
 }
 
 export class Extension
 {
-    constructor(title, description, date, active = false, tooltip = null)
+    constructor(title, description, date, callback, active = false, tooltip = null)
     {
         this.title = title;
         this.description = description;
         this.date = date;
+        this.callback = callback;
         this.active = active;
         if (tooltip)
         {
@@ -107,6 +115,8 @@ export class Extension
 
         const icon = Element.create('div', footer);
         icon.classList.add('icon16', 'settings-gear');
+
+        div.addEventListener('click', this.callback);
     }
 }
 
